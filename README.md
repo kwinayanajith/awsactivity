@@ -21,14 +21,14 @@ aws configure
 S3 bucket name should be globally unique.Make sure to use a unique bucket name.
 
 ```bash
-aws s3 mb s3://chathra-tfstate-bkt --region us-east-1
+aws s3 mb s3://kwinayanajithtest --region us-east-1
 ```
 
 ### Step 3:  Enable Versioning
 Enable versioning on your S3 bucket to keep the history of your state files:
 
 ```bash
-aws s3api put-bucket-versioning --bucket chathra-tfstate-bkt --versioning-configuration Status=Enabled
+aws s3api put-bucket-versioning --bucket kwinayanajithtest --versioning-configuration Status=Enabled
 ```
 
 ### Step 4: Set Up DynamoDB for State Locking (Optional)
@@ -36,7 +36,7 @@ If you want to use state locking, create a DynamoDB table:
 
 ```bash
 aws dynamodb create-table \
-    --table-name my-lock-table \
+    --table-name kwinayanajith-lock-table \
     --attribute-definitions AttributeName=LockID,AttributeType=S \
     --key-schema AttributeName=LockID,KeyType=HASH \
     --billing-mode PAY_PER_REQUEST
@@ -48,10 +48,10 @@ Add the following backend configuration in ```providers.tf```
 ```bash
 terraform {
   backend "s3" {
-    bucket         = "my-terraform-state-bucket" # use the same bucket name used in step 2
-    key            = "terraform.tfstate" 
+    bucket         = "kwinayanajithtest"  # use the same bucket name used in step 2
+    key            = "terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "my-lock-table" # optional (Only if you created the DynamoDB table in step 4) 
+    dynamodb_table = "kwinayanajith-lock-table"  # optional (Only if you created the DynamoDB table in step 4)
   }
 }
 ```
