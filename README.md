@@ -59,7 +59,7 @@ terraform {
 ### Step 6: Create a new Github repository and set following secrets in development enviroment
 This step will ensure github actions can authenticate and deploy the resources in AWS using Terraform.Your IAM user should have sufficient permissions in AWS. The ```AWS_ACCESS_KEY_ID``` and ```AWS_SECRET_ACCESS_KEY``` should be the security credentials of your AWS account user.
 
-![Alt text](Screenshot 2024-01-06 233058.png)
+![Alt text](image.png)
 
 
 ### Step 7: Once you prepare the code locally and commited to the local git repository, push it to the new repository that you created in Step 6, so it should trigger Github actions(CI/CD pipeline)
