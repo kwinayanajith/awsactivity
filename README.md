@@ -72,6 +72,4 @@ git push origin main
 
 ### Step 8: Access the deployed API
 
-![Alt text](image-1.png)
 
-![Alt text](image-2.png)
