@@ -65,7 +65,7 @@ This step will ensure github actions can authenticate and deploy the resources i
 ### Step 7: Once you prepare the code locally and commited to the local git repository, push it to the new repository that you created in Step 6, so it should trigger Github actions(CI/CD pipeline)
 
 ```bash
-git remote set-url origin  <your new remote repo url(step 6)> 
+git remote set-url origin https://github.com/kwinayanajith/awsactivity
 git push origin main
 ```
 
